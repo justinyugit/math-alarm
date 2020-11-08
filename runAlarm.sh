@@ -14,7 +14,8 @@ while true; do
 	figlet $number1 x $number2 = ?
 
 	$(mpg123 -q /home/pi/math-alarm/alarm.mp3) &
-	read -p "Product: " input && [ $input -eq $product ] && killall mpg123 && exit 1 || continue
+	read -p "Product: " input && [ $input -eq $product ] && killall mpg123 && echo "$input is right. Have a nice day!" && exit 1 || echo "$input is wrong. Try another question."
+	
     fi
-    sleep 20
+    sleep 1
 done
